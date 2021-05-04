@@ -1,0 +1,45 @@
+Index: onclick/src/main/java/ru/mirea/syrovatsky/onclick/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- onclick/src/main/java/ru/mirea/syrovatsky/onclick/MainActivity.java	(revision 6901f7b83b8236963866a21e3d065d558b38e77d)
++++ onclick/src/main/java/ru/mirea/syrovatsky/onclick/MainActivity.java	(date 1620166053296)
+@@ -8,22 +8,32 @@
+ import android.widget.TextView;
+ 
+ public class MainActivity extends AppCompatActivity {
+-    private TextView tvOut;
++    private TextView textView;
+     private Button buttonOk;
+     private Button buttonCancel;
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+-        tvOut = (TextView) findViewById(R.id.tvOut);
++        textView= (TextView) findViewById(R.id.tvOut);
+         buttonOk = (Button)findViewById(R.id.btnOk);
+         buttonCancel = (Button)findViewById(R.id.btnCancel);
+         View.OnClickListener oclBtnOk = new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                textView.setText("нажата ок");
+-
++                textView.setText("нажата кнопка ок");
++
++            }
++        final View.OnClickListener oclBtnCancel = new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                textView.setText("Нажата кнопка cancel");
+             }
++
++            };
+         };
++        buttonCancel.setOnClickListener(oclBtnCancel);
++        buttonOk.setOnClickListener(oclBtnOk);
++
+     }
+ }
+\ No newline at end of file
