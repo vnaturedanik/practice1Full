@@ -1,3 +1,4 @@
+include ':onclick'
 include ':layouttype'
 include ':myapplication'
 include ':app'
