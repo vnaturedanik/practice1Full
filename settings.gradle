@@ -1,0 +1,4 @@
+include ':layouttype'
+include ':myapplication'
+include ':app'
+rootProject.name = "practice1"
